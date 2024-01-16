@@ -1,7 +1,6 @@
 # Programmer: Mr. Devet
-# Date: 2022-01-10
-# Description: A Whack-A-Mole game that makes use of mouse
-#    events
+# Date: 2022-01-21
+# Description: A Whack-A-Mole game that makes use of audio
 
 # Import and initialize the pygame library
 import pygame
@@ -42,10 +41,12 @@ permanent_marker_72 = pygame.font.Font("PermanentMarker.ttf", 72)
 
 # Load the sound effects
 mallet_sound = pygame.mixer.Sound("whack-wood.mp3")
-mole_sound = pygame.mixer.Sound("whack-mole.mp3")
+hit_mole_sound = pygame.mixer.Sound("whack-mole.mp3")
 
-# Load background music into the music stream
+# Load background music
 pygame.mixer.music.load("hampster-march.mp3")
+
+# Play the background music
 pygame.mixer.music.play()
 
 
@@ -97,7 +98,7 @@ while True:
             if mole.mask_contains_point(event.pos):
                 pow.center = event.pos
                 pow.add(all_sprites)
-                mole_sound.play()
+                hit_mole_sound.play()
 
             else:
                 mallet_sound.play()
