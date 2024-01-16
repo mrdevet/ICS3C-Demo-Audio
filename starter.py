@@ -122,3 +122,6 @@ while True:
 
     # Flip the changes to the screen to the computer display
     pygame.display.flip()
+
+# Quit the pygame program
+pygame.quit()
